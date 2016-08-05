@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MyView.h"
 
 @interface ViewController ()
 
@@ -15,13 +16,31 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+//    _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
+//    
+//    if (!_context) {
+//        
+//        NSLog(@"opengles3初始化失败");
+//    }
+//    
+//    GLKView *view = (GLKView *)self.view;
+//    
+//    view.context = _context;
+//    
+//    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+//    
+//    [EAGLContext setCurrentContext:_context];
+//    
+//    glEnable(GL_DEPTH_TEST);
+//    
+//    glClearColor(0.1, 0.2, 0.3, 1);
+    
+    MyView *view = [[MyView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
+    
+    [self.view addSubview:view];
 }
 
 @end
