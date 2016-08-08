@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyView.h"
+#import "GLView.h"
 
 @interface ViewController ()
 
@@ -38,7 +39,7 @@
 //    
 //    glClearColor(0.1, 0.2, 0.3, 1);
     
-    MyView *view = [[MyView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
+    GLView *view = [[GLView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
     
     [self.view addSubview:view];
 }

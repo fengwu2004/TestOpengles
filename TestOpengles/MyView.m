@@ -201,7 +201,7 @@ const GLubyte Indices[] = {
     glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, 0, vertices);
     
     // Draw triangle
-    glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]),GL_UNSIGNED_BYTE, 0);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
     
     [_context presentRenderbuffer:GL_RENDERBUFFER];
 }

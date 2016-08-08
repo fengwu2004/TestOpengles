@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0CB1CC1D583422007F6A0F /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CB1CB1D583422007F6A0F /* GLView.m */; };
 		2C1F60EB1D47620800226C78 /* arena.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F60D91D47620800226C78 /* arena.c */; };
 		2C1F60EC1D47620800226C78 /* arith.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F60DA1D47620800226C78 /* arith.c */; };
 		2C1F60ED1D47620800226C78 /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F60DB1D47620800226C78 /* array.c */; };
@@ -45,7 +46,6 @@
 		2C61E8B01D3F6AAA006CAB09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C61E8AE1D3F6AAA006CAB09 /* LaunchScreen.storyboard */; };
 		2C61E8B81D3F6B9C006CAB09 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C61E8B71D3F6B9C006CAB09 /* GLKit.framework */; };
 		2C61E8BA1D3F6BA5006CAB09 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C61E8B91D3F6BA5006CAB09 /* OpenGLES.framework */; };
-		2C61E8BD1D3F73CE006CAB09 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C61E8BC1D3F73CE006CAB09 /* MyView.m */; };
 		2CD3D1381D4757B70086DAAB /* gles_25d_c_program.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D1241D4757B70086DAAB /* gles_25d_c_program.c */; };
 		2CD3D1391D4757B70086DAAB /* gles_25vec_layer.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D1251D4757B70086DAAB /* gles_25vec_layer.c */; };
 		2CD3D13A1D4757B70086DAAB /* gles_2d_c_program.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D1261D4757B70086DAAB /* gles_2d_c_program.c */; };
@@ -185,6 +185,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C0CB1CA1D583422007F6A0F /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		2C0CB1CB1D583422007F6A0F /* GLView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = GLView.m; sourceTree = "<group>"; };
 		2C1F60C61D47620800226C78 /* arena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena.h; sourceTree = "<group>"; };
 		2C1F60C71D47620800226C78 /* arith.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arith.h; sourceTree = "<group>"; };
 		2C1F60C81D47620800226C78 /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
@@ -256,8 +258,6 @@
 		2C61E8B11D3F6AAA006CAB09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C61E8B71D3F6B9C006CAB09 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		2C61E8B91D3F6BA5006CAB09 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		2C61E8BB1D3F73CE006CAB09 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
-		2C61E8BC1D3F73CE006CAB09 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		2CD3D10E1D4757B70086DAAB /* gles_25d_c_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gles_25d_c_program.h; sourceTree = "<group>"; };
 		2CD3D10F1D4757B70086DAAB /* gles_25vec_layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gles_25vec_layer.h; sourceTree = "<group>"; };
 		2CD3D1101D4757B70086DAAB /* gles_2d_c_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gles_2d_c_program.h; sourceTree = "<group>"; };
@@ -730,12 +730,12 @@
 				2C61E8AE1D3F6AAA006CAB09 /* LaunchScreen.storyboard */,
 				2C61E8B11D3F6AAA006CAB09 /* Info.plist */,
 				2C61E8A01D3F6AAA006CAB09 /* Supporting Files */,
-				2C61E8BB1D3F73CE006CAB09 /* MyView.h */,
-				2C61E8BC1D3F73CE006CAB09 /* MyView.m */,
 				2CD57D6A1D5483EA0089332F /* SimpleFragment.glsl */,
 				2CD57D681D5483520089332F /* SimpleVertex.glsl */,
 				2CD57D6C1D5493950089332F /* GLESUtils.h */,
 				2CD57D6D1D5493950089332F /* GLESUtils.m */,
+				2C0CB1CA1D583422007F6A0F /* GLView.h */,
+				2C0CB1CB1D583422007F6A0F /* GLView.m */,
 			);
 			path = TestOpengles;
 			sourceTree = "<group>";
@@ -1328,7 +1328,6 @@
 				2CD3D2CA1D4757FD0086DAAB /* truetype.c in Sources */,
 				2CD3D2AA1D4757FD0086DAAB /* psobjs.c in Sources */,
 				2CD3D2771D4757FD0086DAAB /* autofit.c in Sources */,
-				2C61E8BD1D3F73CE006CAB09 /* MyView.m in Sources */,
 				2CD3D26F1D4757FD0086DAAB /* afhints.c in Sources */,
 				2CD3D30F1D4758900086DAAB /* pngwtran.c in Sources */,
 				2CD3D2C21D4757FD0086DAAB /* ttmtx.c in Sources */,
@@ -1407,6 +1406,7 @@
 				2CD3D2A41D4757FD0086DAAB /* cffpic.c in Sources */,
 				2CD3D26C1D4757FD0086DAAB /* afcjk.c in Sources */,
 				2CD3D3021D4758900086DAAB /* pngerror.c in Sources */,
+				2C0CB1CC1D583422007F6A0F /* GLView.m in Sources */,
 				2CD3D1401D4757B70086DAAB /* gles_map_animation.c in Sources */,
 				2C1F60F81D47620800226C78 /* set.c in Sources */,
 				2CD3D2BA1D4757FD0086DAAB /* sfdriver.c in Sources */,
