@@ -20,28 +20,15 @@
     
     [super viewDidLoad];
     
-//    _context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-//    
-//    if (!_context) {
-//        
-//        NSLog(@"opengles3初始化失败");
-//    }
-//    
-//    GLKView *view = (GLKView *)self.view;
-//    
-//    view.context = _context;
-//    
-//    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-//    
-//    [EAGLContext setCurrentContext:_context];
-//    
-//    glEnable(GL_DEPTH_TEST);
-//    
-//    glClearColor(0.1, 0.2, 0.3, 1);
-    
     GLView *view = [[GLView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
     
     [self.view addSubview:view];
+    
+    NSString *glesPath = [[NSBundle mainBundle] pathForResource:@"font" ofType:@"ttf" inDirectory:@"glres"];
+    
+    NSString *str = [glesPath stringByDeletingLastPathComponent];
+
+    
 }
 
 @end

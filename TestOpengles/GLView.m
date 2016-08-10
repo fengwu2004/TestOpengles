@@ -7,6 +7,7 @@
 //
 
 #import "GLView.h"
+#import "MapRender.h"
 
 typedef struct {
     float Position[3];
@@ -33,6 +34,7 @@ const GLubyte Indices[] = {
 @property (nonatomic, assign) GLuint programHandle;
 @property (nonatomic, assign) GLuint vertexBuffer;
 @property (nonatomic, assign) GLuint indexBuffer;
+@property (nonatomic, retain) MapRender *mapRender;
 @end
 
 @implementation GLView
@@ -45,19 +47,30 @@ const GLubyte Indices[] = {
         
         [self createEAGContext];
         
+        [self func:frame];
+        
         [self configure];
-        
-        [self addVertex];
-        
-        [self compileShaders];
+
+//        [self addVertex];
+//        
+//        [self compileShaders];
     }
     
     return self;
 }
 
+- (void)func:(CGRect)frame {
+    
+    NSString *glesPath = [[NSBundle mainBundle] pathForResource:@"LE" ofType:@"vbf"];
+    
+    _mapRender = [[MapRender alloc] initRender:glesPath];
+    
+    [_mapRender setSize:frame.size.width height:frame.size.height];
+}
+
 - (void)createEAGContext {
     
-    EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES2;
+    EAGLRenderingAPI api = kEAGLRenderingAPIOpenGLES3;
     
     _context = [[EAGLContext alloc] initWithAPI:api];
     
@@ -72,7 +85,7 @@ const GLubyte Indices[] = {
     
     [self addSubview:_glkView];
     
-    _glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+//    _glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
 }
 
 - (void)addVertex {
@@ -183,9 +196,9 @@ const GLubyte Indices[] = {
     glEnableVertexAttribArray(_colorSlot);
 }
 
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+- (void)drawTriangles {
     
-//    glClearColor(1, 1, 1, 1.0);
+    glClearColor(1, 1, 1, 1.0);
     
     glClear(GL_COLOR_BUFFER_BIT);
     
@@ -202,6 +215,11 @@ const GLubyte Indices[] = {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
     
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(GLubyte), GL_UNSIGNED_BYTE, (void*)0);
+}
+
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+    
+    [_mapRender draw];
 }
 
 @end

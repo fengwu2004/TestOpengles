@@ -776,6 +776,7 @@ _except_handler(const except_t *e,
                         const char *reason,
                         int line)
 {
+    
 #ifdef ANDROID_IDRN
     log_e("\n*****************Exception*****************\n"
             "Abort for a uncaught exception type:%s\n"
@@ -786,6 +787,16 @@ _except_handler(const except_t *e,
                     e->type, 
                     func, file, line,
                     reason);
+#else
+    printf("\n*****************Exception*****************\n"
+           "Abort for a uncaught exception type:%s\n"
+           "raised in %s at %s:%d\n"
+           "reason:%s"
+           "\n*****************Exception*****************\n"
+           ,
+           e->type,
+           func, file, line,
+           reason);
 #endif
     abort();
 }
