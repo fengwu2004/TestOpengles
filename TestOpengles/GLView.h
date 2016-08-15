@@ -14,4 +14,6 @@
 @property (nonatomic, retain) GLKView *glkView;
 @property (nonatomic, retain) EAGLContext *context;
 
+- (void)zoom;
+
 @end

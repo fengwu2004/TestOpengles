@@ -12,6 +12,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, retain) GLView *glesMap;
+
 @end
 
 @implementation ViewController
@@ -20,15 +22,14 @@
     
     [super viewDidLoad];
     
-    GLView *view = [[GLView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
+    _glesMap = [[GLView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
     
-    [self.view addSubview:view];
-    
-    NSString *glesPath = [[NSBundle mainBundle] pathForResource:@"font" ofType:@"ttf" inDirectory:@"glres"];
-    
-    NSString *str = [glesPath stringByDeletingLastPathComponent];
+    [self.view addSubview:_glesMap];
+}
 
+- (IBAction)onZoom:(id)sender {
     
+    [_glesMap zoom];
 }
 
 @end

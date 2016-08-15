@@ -9,6 +9,10 @@
 #import "GLView.h"
 #import "MapRender.h"
 
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
 typedef struct {
     float Position[3];
     float Color[4];
@@ -35,6 +39,7 @@ const GLubyte Indices[] = {
 @property (nonatomic, assign) GLuint vertexBuffer;
 @property (nonatomic, assign) GLuint indexBuffer;
 @property (nonatomic, retain) MapRender *mapRender;
+
 @end
 
 @implementation GLView
@@ -50,10 +55,6 @@ const GLubyte Indices[] = {
         [self func:frame];
         
         [self configure];
-
-//        [self addVertex];
-//        
-//        [self compileShaders];
     }
     
     return self;
@@ -79,9 +80,9 @@ const GLubyte Indices[] = {
 
 -(void)configure {
     
-    _glkView = [[GLKView alloc] initWithFrame:self.bounds context:_context];
+    _glkViewControll = [[GLKViewController alloc] ];
     
-    _glkView.delegate = self;
+    GLKViewController.delegate = self;
     
     [self addSubview:_glkView];
     
@@ -220,6 +221,15 @@ const GLubyte Indices[] = {
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     
     [_mapRender draw];
+    
+    NSLog(@"渲染地图");
+}
+
+- (void)zoom {
+    
+    [_mapRender resize:kScreenWidth height:kScreenHeight];
+    
+    [_glkView display];
 }
 
 @end

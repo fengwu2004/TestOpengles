@@ -15,6 +15,8 @@
 
 - (void)setSize:(CGFloat)width height:(CGFloat)height;
 
+- (void)resize:(CGFloat)witdth height:(CGFloat)height;
+
 - (void)draw;
 
 @end
