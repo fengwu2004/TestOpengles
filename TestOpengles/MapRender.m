@@ -51,9 +51,19 @@
     gles_map_render_setmap(gmr, szMapFile);
 }
 
-- (void)resize:(CGFloat)width height:(CGFloat)height {
+- (void)zoom:(CGFloat)zoomValue {
     
-    gles_map_render_anim_zoom_by(gmr, 3);
+    gles_map_render_anim_zoom_by(gmr, zoomValue);
+}
+
+- (void)rotate:(CGFloat)angle {
+    
+    gles_map_render_anim_zoom_by(gmr, zoomValue);
+}
+
+- (void)pan:(CGFloat)x y:(CGFloat)y {
+    
+    
 }
 
 - (void)draw {

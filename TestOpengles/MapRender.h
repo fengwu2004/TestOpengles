@@ -15,7 +15,11 @@
 
 - (void)setSize:(CGFloat)width height:(CGFloat)height;
 
-- (void)resize:(CGFloat)witdth height:(CGFloat)height;
+- (void)zoom:(CGFloat)zoomValue;
+
+- (void)rotate:(CGFloat)angle;
+
+- (void)pan:(CGFloat)x y:(CGFloat)y;
 
 - (void)draw;
 
