@@ -8,11 +8,11 @@
 
 #import "ViewController.h"
 #import "MyView.h"
-#import "MapViewController.h"
+#import "MapView.h"
 
 @interface ViewController ()
 
-@property (nonatomic, retain) MapViewController *glesMap;
+@property (nonatomic, retain) MapView *glesMap;
 
 @end
 
@@ -22,17 +22,9 @@
     
     [super viewDidLoad];
     
-    _glesMap = [[MapViewController alloc] init];
+    _glesMap = [[MapView alloc] initWithFrame:self.view.bounds];
     
-    [self.view addSubview:_glesMap.view];
-    
-    [self addChildViewController:_glesMap];
-    
-    [_glesMap didMoveToParentViewController:self];
-    
-    _glesMap.view.frame = self.view.bounds;
-    
-    [self.view sendSubviewToBack:_glesMap.view];
+    [self.view addSubview:_glesMap];
 }
 
 - (IBAction)onZoom:(id)sender {

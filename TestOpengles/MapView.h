@@ -9,9 +9,10 @@
 #import <GLKit/GLKit.h>
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : GLKViewController
+@interface MapView : UIView
 
 @property (nonatomic, retain) EAGLContext *context;
+@property (nonatomic, retain) GLKView *glkView;
 
 - (void)zoom;
 

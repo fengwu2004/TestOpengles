@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C0CB1CC1D583422007F6A0F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CB1CB1D583422007F6A0F /* MapViewController.m */; };
+		2C0CB1CC1D583422007F6A0F /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CB1CB1D583422007F6A0F /* MapView.m */; };
 		2C0CB2281D589897007F6A0F /* MapRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0CB2271D589897007F6A0F /* MapRender.m */; };
 		2C1F60EB1D47620800226C78 /* arena.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F60D91D47620800226C78 /* arena.c */; };
 		2C1F60EC1D47620800226C78 /* arith.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C1F60DA1D47620800226C78 /* arith.c */; };
@@ -113,8 +113,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C0CB1CA1D583422007F6A0F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		2C0CB1CB1D583422007F6A0F /* MapViewController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MapViewController.m; sourceTree = "<group>"; };
+		2C0CB1CA1D583422007F6A0F /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		2C0CB1CB1D583422007F6A0F /* MapView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MapView.m; sourceTree = "<group>"; };
 		2C0CB2261D589897007F6A0F /* MapRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRender.h; sourceTree = "<group>"; };
 		2C0CB2271D589897007F6A0F /* MapRender.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = MapRender.m; sourceTree = "<group>"; };
 		2C1F60C61D47620800226C78 /* arena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arena.h; sourceTree = "<group>"; };
@@ -518,8 +518,8 @@
 				2C61E8A01D3F6AAA006CAB09 /* Supporting Files */,
 				2CD57D6A1D5483EA0089332F /* SimpleFragment.glsl */,
 				2CD57D681D5483520089332F /* SimpleVertex.glsl */,
-				2C0CB1CA1D583422007F6A0F /* MapViewController.h */,
-				2C0CB1CB1D583422007F6A0F /* MapViewController.m */,
+				2C0CB1CA1D583422007F6A0F /* MapView.h */,
+				2C0CB1CB1D583422007F6A0F /* MapView.m */,
 				2C0CB2261D589897007F6A0F /* MapRender.h */,
 				2C0CB2271D589897007F6A0F /* MapRender.m */,
 				2CE450011D59E3A8006940F2 /* Media.xcassets */,
@@ -1005,7 +1005,7 @@
 				2CD3D3031D4758900086DAAB /* pngget.c in Sources */,
 				2CD3D3071D4758900086DAAB /* pngrio.c in Sources */,
 				2CD3D3021D4758900086DAAB /* pngerror.c in Sources */,
-				2C0CB1CC1D583422007F6A0F /* MapViewController.m in Sources */,
+				2C0CB1CC1D583422007F6A0F /* MapView.m in Sources */,
 				2CD3D1401D4757B70086DAAB /* gles_map_animation.c in Sources */,
 				2C1F60F81D47620800226C78 /* set.c in Sources */,
 				2CD3D3041D4758900086DAAB /* pngmem.c in Sources */,
@@ -1165,6 +1165,7 @@
 					TestOpengles/freetype/include/,
 				);
 				INFOPLIST_FILE = TestOpengles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yellfun.TestOpengles;
@@ -1184,6 +1185,7 @@
 					TestOpengles/freetype/include/,
 				);
 				INFOPLIST_FILE = TestOpengles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yellfun.TestOpengles;
 				PRODUCT_NAME = "$(TARGET_NAME)";

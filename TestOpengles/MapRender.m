@@ -58,7 +58,7 @@
 
 - (void)rotate:(CGFloat)angle {
     
-    gles_map_render_anim_zoom_by(gmr, zoomValue);
+    gles_map_render_anim_zoom_by(gmr, angle);
 }
 
 - (void)pan:(CGFloat)x y:(CGFloat)y {

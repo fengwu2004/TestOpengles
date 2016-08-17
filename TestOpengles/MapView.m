@@ -6,13 +6,13 @@
 //  Copyright © 2016 yellfun. All rights reserved.
 //
 
-#import "MapViewController.h"
+#import "MapView.h"
 #import "MapRender.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface MapViewController()<GLKViewDelegate>
+@interface MapView()<GLKViewDelegate>
 
 @property (nonatomic, assign) GLuint positionSlot;
 @property (nonatomic, assign) GLuint colorSlot;
@@ -23,13 +23,15 @@
 
 @end
 
-@implementation MapViewController
+@implementation MapView
 
-- (void)viewDidLoad {
+- (id)initWithFrame:(CGRect)frame {
     
-    [super viewDidLoad];
+    self = [super initWithFrame:frame];
     
     [self createEAGContext];
+    
+    return self;
 }
 
 - (void)configMap {
@@ -47,11 +49,11 @@
     
     _context = [[EAGLContext alloc] initWithAPI:api];
     
-    GLKView *view = (GLKView *)self.view;
+    _glkView = [[GLKView alloc] initWithFrame:self.bounds context:_context];
     
-    view.context = _context;
+    _glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     
-    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    [_glkView setDelegate:self];
     
     [self setupGL];
 }
@@ -60,20 +62,20 @@
 {
     [EAGLContext setCurrentContext:self.context];
     
-    [((GLKView *) self.view) bindDrawable];
+//    [_glkView bindDrawable];
     
     //Optional code to demonstrate how can you bind frame buffer and render buffer.
-    GLint defaultFBO;
-    
-    GLint defaultRBO;
-    
-    glGetIntegerv(GL_FRAMEBUFFER_BINDING, &defaultFBO);
-    
-    glGetIntegerv(GL_RENDERBUFFER_BINDING, &defaultRBO);
-    
-    glBindFramebuffer( GL_FRAMEBUFFER, defaultFBO );
-    
-    glBindRenderbuffer( GL_RENDERBUFFER, defaultRBO );
+//    GLint defaultFBO;
+//    
+//    GLint defaultRBO;
+//    
+//    glGetIntegerv(GL_FRAMEBUFFER_BINDING, &defaultFBO);
+//    
+//    glGetIntegerv(GL_RENDERBUFFER_BINDING, &defaultRBO);
+//    
+//    glBindFramebuffer( GL_FRAMEBUFFER, defaultFBO );
+//    
+//    glBindRenderbuffer( GL_RENDERBUFFER, defaultRBO );
     
     [self configMap];
 }
