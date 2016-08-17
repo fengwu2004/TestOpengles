@@ -106,7 +106,6 @@
 		2CD3D3111D4758900086DAAB /* README in Resources */ = {isa = PBXBuildFile; fileRef = 2CD3D2FE1D4758900086DAAB /* README */; };
 		2CD57D691D5483520089332F /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 2CD57D681D5483520089332F /* SimpleVertex.glsl */; };
 		2CD57D6B1D5483EA0089332F /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 2CD57D6A1D5483EA0089332F /* SimpleFragment.glsl */; };
-		2CD57D6E1D5493950089332F /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD57D6D1D5493950089332F /* GLESUtils.m */; };
 		2CE450021D59E3A8006940F2 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE450011D59E3A8006940F2 /* Media.xcassets */; };
 		2CE450041D59E5DE006940F2 /* glres in Resources */ = {isa = PBXBuildFile; fileRef = 2CE450031D59E5DE006940F2 /* glres */; };
 		2CE450051D5ABE50006940F2 /* gles_marker_layer.c in Sources */ = {isa = PBXBuildFile; fileRef = 2CD3D12E1D4757B70086DAAB /* gles_marker_layer.c */; };
@@ -361,8 +360,6 @@
 		2CD3D2FE1D4758900086DAAB /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		2CD57D681D5483520089332F /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
 		2CD57D6A1D5483EA0089332F /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
-		2CD57D6C1D5493950089332F /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
-		2CD57D6D1D5493950089332F /* GLESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESUtils.m; sourceTree = "<group>"; };
 		2CE450001D59E2DF006940F2 /* LE.vbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LE.vbf; sourceTree = "<group>"; };
 		2CE450011D59E3A8006940F2 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2CE450031D59E5DE006940F2 /* glres */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glres; sourceTree = "<group>"; };
@@ -521,8 +518,6 @@
 				2C61E8A01D3F6AAA006CAB09 /* Supporting Files */,
 				2CD57D6A1D5483EA0089332F /* SimpleFragment.glsl */,
 				2CD57D681D5483520089332F /* SimpleVertex.glsl */,
-				2CD57D6C1D5493950089332F /* GLESUtils.h */,
-				2CD57D6D1D5493950089332F /* GLESUtils.m */,
 				2C0CB1CA1D583422007F6A0F /* MapViewController.h */,
 				2C0CB1CB1D583422007F6A0F /* MapViewController.m */,
 				2C0CB2261D589897007F6A0F /* MapRender.h */,
@@ -997,7 +992,6 @@
 				2CD3D27D1D4757FD0086DAAB /* ftbitmap.c in Sources */,
 				2C61E8A51D3F6AAA006CAB09 /* AppDelegate.m in Sources */,
 				2CD3D13E1D4757B70086DAAB /* gles_loc_layer.c in Sources */,
-				2CD57D6E1D5493950089332F /* GLESUtils.m in Sources */,
 				2CD3D13C1D4757B70086DAAB /* gles_3d_c_program.c in Sources */,
 				2CD3D3091D4758900086DAAB /* pngrutil.c in Sources */,
 				2C1F60EE1D47620800226C78 /* assert.c in Sources */,
