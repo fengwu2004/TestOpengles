@@ -25,6 +25,8 @@
     _glesMap = [[MapView alloc] initWithFrame:self.view.bounds];
     
     [self.view addSubview:_glesMap];
+    
+    [self.view sendSubviewToBack:_glesMap];
 }
 
 - (IBAction)onZoom:(id)sender {

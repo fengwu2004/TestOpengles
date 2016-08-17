@@ -31,7 +31,23 @@
     
     [self createEAGContext];
     
+    [self configMap];
+    
+    [self setDisplayLink];
+    
     return self;
+}
+
+- (void)setDisplayLink {
+    
+    CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
+    
+    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+}
+
+- (void)render:(CADisplayLink*)displayLink {
+    
+    [_glkView display];
 }
 
 - (void)configMap {
@@ -49,35 +65,15 @@
     
     _context = [[EAGLContext alloc] initWithAPI:api];
     
+    [EAGLContext setCurrentContext:_context];
+    
     _glkView = [[GLKView alloc] initWithFrame:self.bounds context:_context];
     
+    _glkView.delegate = self;
+    
+    [self addSubview:_glkView];
+    
     _glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-    
-    [_glkView setDelegate:self];
-    
-    [self setupGL];
-}
-
-- (void)setupGL
-{
-    [EAGLContext setCurrentContext:self.context];
-    
-//    [_glkView bindDrawable];
-    
-    //Optional code to demonstrate how can you bind frame buffer and render buffer.
-//    GLint defaultFBO;
-//    
-//    GLint defaultRBO;
-//    
-//    glGetIntegerv(GL_FRAMEBUFFER_BINDING, &defaultFBO);
-//    
-//    glGetIntegerv(GL_RENDERBUFFER_BINDING, &defaultRBO);
-//    
-//    glBindFramebuffer( GL_FRAMEBUFFER, defaultFBO );
-//    
-//    glBindRenderbuffer( GL_RENDERBUFFER, defaultRBO );
-    
-    [self configMap];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {

@@ -12,6 +12,7 @@
 @interface MapView : UIView
 
 @property (nonatomic, retain) EAGLContext *context;
+
 @property (nonatomic, retain) GLKView *glkView;
 
 - (void)zoom;
