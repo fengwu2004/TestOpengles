@@ -69,6 +69,19 @@ extern void                 gles_map_render_get_navistatus  (T gmr, struct nav_s
 /**
  * 处理触摸事件
  */
+/**
+ * 传入触摸事件
+ * action 的取值:
+ * TOUCH_ACTION_DOWN 单点按下
+ * TOUCH_ACTION_MOVE 单点/多点移动
+ * TOUCH_ACTION_UP   单点抬起
+ * TOUCH_MULTI_DOWN  多点按下
+ * TOUCH_MULTI_UP    多点抬起
+ *
+ * 单点事件的时候, 只需填充x0, y0
+ * 多点事件时, x0, y0, x1, y1都要填充, 目前也只支持两点手势
+ * 如果有必要再扩展
+ */
 extern int                  gles_map_render_ontouch         (T gmr, int action, float x0, float y0, float x1, float y1);
 
 /**

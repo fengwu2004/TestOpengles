@@ -56,6 +56,11 @@
     gles_map_render_anim_zoom_by(gmr, zoomValue);
 }
 
+- (void)handleTouch:(int)action firstFinger:(CGPoint)first secondFinger:(CGPoint)second {
+    
+    gles_map_render_ontouch(gmr, action, first.x, first.y, second.x, second.y);
+}
+
 - (void)rotate:(CGFloat)angle {
     
     gles_map_render_anim_zoom_by(gmr, angle);
